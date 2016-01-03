@@ -1,0 +1,14 @@
+<div class="blog-header">
+  <h1 class="blog-title">Rack, Rack City</h1>
+  <p class="lead blog-description">Sinatra: 2000 lines of code, Rails: 200,000 lines of code</p>
+
+
+    <div class="row">
+      <div class="col-sm-12 blog-main">
+        <% @authors.each do |author| %>
+          <div class="blog-post">
+            <h2 class="blog-post-title"><a href="/authors/<%= author.id %>"><%= author.name %></a></h2>
+    </div>
+  </div>
+<% end %>
+

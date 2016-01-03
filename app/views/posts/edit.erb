@@ -1,0 +1,28 @@
+<h1>Update Post</h1>
+ 
+ <form action="/posts/<%=@post.id%>" method="POST">
+   <label>Name:</label>
+ 
+   <br><br>
+ 
+   <input type="text" name="post[title]" value="<%= @post.title %>">
+ 
+   <br><br>
+ 
+   <label>Choose an existing Author:</label>
+ 
+   <br><br>
+ 
+   <% Author.all.each do |author| %>
+     <%= author.name %><input type="checkbox" name="post[author_id]" value="<%= author.id %>" <%= 'checked' if @post.author == author %>>
+   <% end %>
+ 
+   <br><br>
+ 
+   <label>Change or add Author:</label>
+   <br><br>
+   <label>New Author:</label>
+     <input type="text" name="author[name]">
+   <br><br>
+   <input type="submit" value="Update Post">
+ </form> 

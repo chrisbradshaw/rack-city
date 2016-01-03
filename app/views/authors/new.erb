@@ -1,0 +1,26 @@
+<h1>Create a New Author</h1>
+
+<form action="/authors" method="post">
+  <label>Author Name:</label>
+  
+  <br></br>
+  
+  <input type="text" name="author[name]">
+  
+  <br></br>
+
+  <%Post.all.each do |pet|%>
+    <input type="checkbox" name="author[post_ids][]" value="<%=post.id%>"><%=post.title%></input>
+  <%end%>
+
+   <br></br>
+
+  <label>and/or, create a new post:</label>
+    <br></br>
+    <label>Post Name:</label>
+      <input  type="text" name="post[title]"></input>
+
+    <br></br>
+  
+  <input type="submit" value="Create Author">
+</form>

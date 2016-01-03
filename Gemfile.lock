@@ -43,6 +43,7 @@ GEM
     minitest (5.8.3)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -111,6 +112,7 @@ DEPENDENCIES
   activerecord
   capybara
   database_cleaner!
+  pg
   pry
   pry-nav
   rack-test
@@ -125,4 +127,4 @@ DEPENDENCIES
   tux
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

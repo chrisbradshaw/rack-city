@@ -1,0 +1,7 @@
+<h1><%=@author.name%></h1>
+<h4>Posts:</h4>
+<ul>
+  <%@author.posts.each do |post|%>
+  <li><%=post.title%></li>
+  <%end%>
+</ul>

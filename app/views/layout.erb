@@ -1,31 +1,61 @@
 <!doctype html>
 <html>
   <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../public/css/blog.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
     <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
       
       <title>Rack, Rack City</title>
   </head>
   <body>
 
-   <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About Us</a></li>             
-    <li><a href="/posts/new">New Post</a></li>                             
-    <% if post_show_page?%>
-      <li><a href="/posts/<%= @post.id %>/edit">Edit Post</a></li>
-      <li><a href="/posts/<%= @post.id %>/delete">Delete Post</a></li>
-    <% elsif author_show_page? %>
-         <li><a href="/authors/<%= @author.id %>/edit">Create/Edit Author's Blog Posts</a></li>
-      <li><a href="/authors/<%= @author.id %>/delete">Delete Author</a></li>
-    <% end %>
-  </ul>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+          <strong><a class="navbar-brand" href="#">{ Sinatra Source Code: ~2000 lines; Rails: ~200,000 lines }</a></strong>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+      <li><a class="btn btn-default" style="background:#282828;" role="button" href="/">Home</a></li>           
+      <li><a class="btn btn-default" style="background:#282828;" role="button" href="/posts/new">New Post</a></li>
+      <li><a class="btn btn-default" style="background:#282828;" role="button" href="authors/new">See Authors/Sign Up</a></li>                              
+      <% if post_show_page?%>
+        <li><a class="btn btn-warning" style="color:#fff;" role="button" href="/posts/<%= @post.id %>/edit">Edit Post</a></li>
+        <li><a class="btn btn-danger" style="color:#fff;" role="button" href="/posts/<%= @post.id %>/delete">Delete Post</a></li>
+      <% elsif author_show_page? %>
+           <li><a class="btn btn-warning" role="button" href="/authors/<%= @author.id %>/edit">Create/Edit Author's Blog Posts</a></li>
+        <li><a class="btn btn-danger" role="button" href="/authors/<%= @author.id %>/delete">Delete Author</a></li>
+      <% end %>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
 
+
+      <div class="jumbotron text-center" style="background: url('http://www.hdwalley.com/wp-content/uploads/2015/10/city_wallpaper_picture_2079_1080p_hd.jpg') no-repeat center center">
+        <h1 style="color:#fff;">Rack, Rack City</h1>
+        <h2 style="color:#fff;">Sinatra Discussion Form</h2>
+        <p><a class="btn btn-default btn-lg" style="color:#692D64;" href="/posts/new">Start Contributing Now!</a></p>
+      </div>
+
+     <div class="container-fluid">
+  
       <%= yield %>
+      </div>
     </div>
+
+
+
+
+ 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
   </body>
 </html>

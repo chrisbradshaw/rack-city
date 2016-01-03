@@ -6,6 +6,7 @@ class AuthorsController < ApplicationController
 
   get '/authors' do
     @authors = Author.all
+    @posts = Post.all
     erb :'/authors/index' 
   end
 
@@ -14,6 +15,7 @@ class AuthorsController < ApplicationController
   end
 
    post '/authors' do 
+    # binding.pry
     @author = Author.create(params[:author])
     if !params["post"]["title"].empty?
       @author.posts << Post.create(title: params["post"]["title"], body: params["post"]["body"])
@@ -40,5 +42,18 @@ class AuthorsController < ApplicationController
       end
     redirect to "authors/#{@author.id}"
   end
+
+
+  get '/authors/:id/delete' do
+     @author = Author.find(params[:id])
+     # binding.pry
+     erb :"authors/delete"
+   end
+
+  post '/authors/:id/delete' do
+     @author = Author.find(params[:id])
+     @author.destroy
+     redirect '/'
+   end
   
 end

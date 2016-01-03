@@ -2,11 +2,11 @@
  
  <form action="/posts" method="post">
      <label for="post_title">Title:</label><br />
-  <input id="post_title" name="post[title]" type="text" value="<%= @post.title %>" />
+        <input id="post_title" name="post[title]" type="text" value="<%= @post.title %>" />
     
-   <br></br>
+         <br></br>
  
-     <label for="post_body">Body:</label><br />
+  <label for="post_body">Body:</label><br />
   <textarea id="post_body" name="post[body]" rows="5"><%= @post.body %></textarea>
   <br />
  
@@ -17,7 +17,7 @@
    <br></br>
  
    <%Author.all.each do |author|%>
-     <input type="checkbox" name="post[author_id]" value="<%=author.id%>"><%=author.name%></input>
+     <input type="checkbox" name="post[author_id]" value="<%=author.id%>"><%=author.name%></input><br>
    <%end%>
  
    <br></br>
@@ -27,5 +27,5 @@
      <label>Author Name:</label>
        <input  type="text" name="author[name]"></input>
      <br></br>
-   <input type="submit" value="Create Post">
+   <input type="submit" class="btn btn-default" value="Create Post">
  </form>

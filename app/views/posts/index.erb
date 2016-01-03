@@ -1,15 +1,12 @@
-<div class="blog-header">
-  <h1 class="blog-title">Rack, Rack City</h1>
-  <p class="lead blog-description">Sinatra: 2000 lines of code, Rails: 200,000 lines of code</p>
 
-
-    <div class="row">
-      <div class="col-sm-12 blog-main">
-        <% @posts.each do |post| %>
-          <div class="blog-post">
-            <h2 class="blog-post-title"><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
-            <p> <%= post.body %></p>
-    </div>
-  </div>
-<% end %>
-
+      <% @posts.each_slice(3) do |array_of_3_items|%>
+        <div class="row">
+            <% array_of_3_items.each do |post|%>
+              <div class="col-md-4">
+            <h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
+              <p> <%= post.body %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>

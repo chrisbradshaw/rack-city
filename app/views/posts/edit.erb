@@ -24,5 +24,12 @@
    <label>New Author:</label>
      <input type="text" name="author[name]">
    <br><br>
+   
+    <label for="post_body">Edit Body Content:</label><br />
+    <textarea id="post_body" name="post[body]" rows="5"><%= @post.body %></textarea>
+    <br />
+ 
+   <br></br>
+
    <input type="submit" value="Update Post">
  </form> 

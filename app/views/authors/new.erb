@@ -9,8 +9,8 @@
   
   <br></br>
 
-  <%Post.all.each do |pet|%>
-    <input type="checkbox" name="author[post_ids][]" value="<%=post.id%>"><%=post.title%></input>
+  <%Post.all.each do |post|%>
+    <input type="checkbox" name="author[post_ids][]" value="<%=post.id%>"><%=post.title%></input><br>
   <%end%>
 
    <br></br>

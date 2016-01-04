@@ -1,35 +1,38 @@
+<div class="row center">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
 <h1>Update Post</h1>
  
  <form action="/posts/<%=@post.id%>" method="POST">
-   <label>Name:</label>
- 
-   <br><br>
- 
-   <input type="text" name="post[title]" value="<%= @post.title %>">
- 
-   <br><br>
- 
-   <label>Choose an existing Author:</label>
- 
-   <br><br>
- 
-   <% Author.all.each do |author| %>
-     <%= author.name %><input type="checkbox" name="post[author_id]" value="<%= author.id %>" <%= 'checked' if @post.author == author %>>
-   <% end %>
- 
-   <br><br>
- 
-   <label>Change or add Author:</label>
-   <br><br>
-   <label>New Author:</label>
-     <input type="text" name="author[name]">
-   <br><br>
    
-    <label for="post_body">Edit Body Content:</label><br />
-    <textarea id="post_body" name="post[body]" rows="5"><%= @post.body %></textarea>
-    <br />
+    <div class="form-group">
+     <label>Name:</label>
+     <input type="text" name="post[title]"class="form-control" value="<%= @post.title %>">
+    </div>
  
-   <br></br>
+    <div class="form-group">
+     <label>Choose an existing Author:</label>
+     <% Author.all.each do |author| %>
+       <%= author.name %><input type="checkbox" name="post[author_id]" value="<%= author.id %>" <%= 'checked' if @post.author == author %>>
+     <% end %>
+  </div>
+ 
 
+ <div class="form-group">
+   <label>Change or add Author:</label>
+   <label>New Author:</label>
+     <input type="text" class="form-control" name="author[name]">
+   </div>
+   
+<div class="form-group">
+   <div>
+    <label for="post_body">Edit Body Content:</label><br />
+    <textarea id="post_body" class="form-control" name="post[body]" rows="5"><%= @post.body %></textarea>
+  </div>
+ 
+   <br>
    <input type="submit" value="Update Post">
+
  </form> 
+ </div>
+</div>

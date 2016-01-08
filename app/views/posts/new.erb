@@ -1,31 +1,36 @@
+<div class="row center">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
 <h1>New Post</h1>
  
  <form action="/posts" method="post">
-     <label for="post_title">Title:</label><br />
-        <input id="post_title" name="post[title]" type="text" value="<%= @post.title %>" />
+  
+  <div class="form-group">
+     <label for="post_title">Title:</label>
+        <input id="post_title" class="form-control" name="post[title]" type="text" value="<%= @post.title %>" /><br>
     
-         <br></br>
- 
+ <div class="form-group">
   <label for="post_body">Body:</label><br />
-  <textarea id="post_body" name="post[body]" rows="5"><%= @post.body %></textarea>
-  <br />
+  <textarea id="post_body" name="post[body]" class="form-control" rows="5"><%= @post.body %></textarea>
+</div><br>
  
-   <br></br>
- 
+
+<div class="form-group">
    <label>Choose an Author:</label>
- 
-   <br></br>
- 
+  
    <%Author.all.each do |author|%>
-     <input type="checkbox" name="post[author_id]" value="<%=author.id%>"><%=author.name%></input><br>
-   <%end%>
+     <input type="checkbox" name="post[author_id][]" value="<%=author.id%>"><%=author.name%></input>
+   <%end%><br>
+ </div>
  
-   <br></br>
- 
-  <label>and/or, add a new Author:</label>
-     <br></br>
+ <br>
+  <h4>Or, Add a New Author:</h4><br>
+<div class="form-group">
      <label>Author Name:</label>
-       <input  type="text" name="author[name]"></input>
-     <br></br>
+       <input  type="text" class="form-control" name="author[name]"></input>
+     <div><br>
    <input type="submit" class="btn btn-default" value="Create Post">
  </form>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   get '/posts' do
+    # binding.pry
     @posts = Post.all
     erb :'/posts/index' 
   end
@@ -8,6 +9,7 @@ class PostsController < ApplicationController
   get "/posts/new" do
       @title = "New Post"
       @post = Post.new
+      # binding.pry
     erb :"posts/new"
     end
 
@@ -22,6 +24,7 @@ class PostsController < ApplicationController
 
 
   get '/posts/:id' do
+      # binding.pry
       @authors = Author.all
       @post = Post.find(params[:id])
       erb :'/posts/show'

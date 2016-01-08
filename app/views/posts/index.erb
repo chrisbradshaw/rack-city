@@ -3,8 +3,9 @@
         <div class="row">
             <% array_of_3_items.each do |post|%>
               <div class="col-md-4">
-            <h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
-              <p> <%= post.body %></p>
+            <h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3><br>
+            <h5> Post By: <%= post.author.name if post.author%></h5><br>
+            <p> <%= post.body %></p>
               </div>
             <% end %>
           </div>
